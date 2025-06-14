@@ -1,4 +1,5 @@
 let isAdmin = false;
+let registeredUsers = []; // Array para guardar los usuarios registrados
 
 function login() {
     const email = document.getElementById('email').value;
@@ -8,6 +9,8 @@ function login() {
         isAdmin = true;
         showAdminPanel();
     } else {
+        // Guardar el nuevo usuario
+        registeredUsers.push({ email: email, password: password });
         showCars();
     }
 }
@@ -91,13 +94,8 @@ function showAdminPanel() {
     const usersList = document.getElementById('usersList');
     usersList.innerHTML = '<h2>Usuarios Registrados</h2>';
     
-    // Aquí normalmente obtendrías los usuarios de una base de datos
-    const users = [
-        { email: 'usuario1@ejemplo.com', password: 'pass123' },
-        { email: 'usuario2@ejemplo.com', password: 'pass456' }
-    ];
-
-    users.forEach(user => {
+    // Mostrar los usuarios registrados
+    registeredUsers.forEach(user => {
         const userItem = document.createElement('div');
         userItem.className = 'user-item';
         userItem.innerHTML = `
