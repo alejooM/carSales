@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Autos de Lujo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container" id="loginContainer">
+            <h1>Venta de Autos de Lujo</h1>
+            <div class="login-form">
+                <input type="email" id="email" placeholder="Correo electrónico">
+                <input type="password" id="password" placeholder="Contraseña">
+                <button onclick="login()">Iniciar Sesión</button>
+            </div>
+        </div>
+
+        <div class="cars-container" id="carsContainer" style="display: none;">
+            <button class="back-button" onclick="logout()">Cerrar Sesión</button>
+            <h1>Catálogo de Autos de Lujo</h1>
+            <div class="cars-grid" id="carsGrid"></div>
+        </div>
+
+        <div class="admin-container" id="adminContainer" style="display: none;">
+            <button class="back-button" onclick="logout()">Cerrar Sesión</button>
+            <h1>Panel de Administración</h1>
+            <div class="users-list" id="usersList"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
